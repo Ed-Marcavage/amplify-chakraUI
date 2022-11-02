@@ -3,6 +3,15 @@ import "./App.css";
 import "@aws-amplify/ui-react/styles.css";
 import { API, Storage } from "aws-amplify";
 import {
+  VStack,
+  Input,
+  Box,
+  Flex as ChakraFlex,
+  Heading as ChakraHeading,
+  Button as ChakraButton,
+} from "@chakra-ui/react";
+
+import {
   Button,
   Flex,
   Heading,
@@ -11,6 +20,7 @@ import {
   Image,
   View,
   withAuthenticator,
+  useTheme,
 } from "@aws-amplify/ui-react";
 import { listNotes } from "./graphql/queries";
 import {
@@ -19,6 +29,7 @@ import {
 } from "./graphql/mutations";
 
 const App = ({ signOut }) => {
+  const { tokens } = useTheme();
   const [notes, setNotes] = useState([]);
 
   useEffect(() => {
@@ -69,43 +80,72 @@ const App = ({ signOut }) => {
   }
 
   return (
-    <View className="App">
-      <Heading level={1}>My Notes App</Heading>
-      <View as="form" margin="3rem 0" onSubmit={createNote}>
-        <Flex direction="row" justifyContent="center">
+    <VStack>
+      <Box as="form" margin="3rem 0" onSubmit={createNote} w="500px" h="600">
+        <ChakraFlex
+          direction="column
+        "
+          justifyContent="center"
+          background={"gray"}
+          p={"12"}
+          rounded={20}
+        >
+          <ChakraHeading mb={6}>Request</ChakraHeading>
           <TextField
             name="name"
-            placeholder="Note Name"
+            placeholder="Artwork Title"
             label="Note Name"
             labelHidden
             variation="quiet"
             required
+            color="teal"
           />
           <TextField
             name="description"
-            placeholder="Note Description"
+            placeholder="Art Description"
             label="Note Description"
             labelHidden
             variation="quiet"
             required
           />
-          <Button type="submit" variation="primary">
-            Create Note
-          </Button>
-          <View
-            name="image"
-            as="input"
-            type="file"
-            style={{ alignSelf: "end" }}
-          />
-        </Flex>
-      </View>
-      <Heading level={2}>Current Notes</Heading>
+          <Box
+            borderStyle="solid"
+            borderWidth="2px"
+            rounded="md"
+            shadow="sm"
+            height={"20"}
+          >
+            <Box position="relative" height="100%" width="100%">
+              <Box pl={"3"} pt="1.5" textAlign="start">
+                <Text fontWeight="light" textColor={"GrayText"}>
+                  Drop example images here or click to upload
+                </Text>
+              </Box>
+              <View
+                name="image"
+                height="100%"
+                width="100%"
+                position="absolute"
+                top="0"
+                left="0"
+                as="input"
+                type="file"
+                style={{ alignSelf: "center" }}
+                opacity="0"
+              />
+            </Box>
+          </Box>
+          <ChakraButton colorScheme={"teal"} type="submit" variation="menu">
+            Create Request
+          </ChakraButton>
+        </ChakraFlex>
+      </Box>
+      <Heading level={2}>My Request</Heading>
       <View margin="3rem 0">
         {notes.map((note) => (
           <Flex
             key={note.id || note.name}
-            direction="row"
+            direction="column"
             justifyContent="center"
             alignItems="center"
           >
@@ -121,13 +161,13 @@ const App = ({ signOut }) => {
               />
             )}
             <Button variation="link" onClick={() => deleteNote(note)}>
-              Delete note
+              Delete Request
             </Button>
           </Flex>
         ))}
       </View>
       <Button onClick={signOut}>Sign Out</Button>
-    </View>
+    </VStack>
   );
 };
 
