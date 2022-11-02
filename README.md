@@ -2,8 +2,6 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-You have deployed a web application using AWS Amplify! You have added authentication to your app allowing users to sign up, sign in, and manage their account. The app also has a scalable GraphQL API configured with an Amazon DynamoDB database, allowing users to create and delete notes. You have also added file storage using Amazon S3 so that users can upload images and view them in their app.
-
 ## Available Scripts
 
 In the project directory, you can run:
