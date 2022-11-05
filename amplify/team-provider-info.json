@@ -17,6 +17,9 @@
       },
       "storage": {
         "imagestorage": {}
+      },
+      "function": {
+        "amplifychakraui8d579b74": {}
       }
     }
   }

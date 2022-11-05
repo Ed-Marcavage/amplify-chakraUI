@@ -1,0 +1,10 @@
+{
+  "resourceName": "ArtifactTable",
+  "tableName": "ArtifactTable",
+  "partitionKey": {
+    "fieldName": "UserID",
+    "fieldType": "number"
+  },
+  "gsi": [],
+  "triggerFunctions": []
+}
