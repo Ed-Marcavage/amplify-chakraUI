@@ -16,10 +16,8 @@
         "amplifychakraui": {}
       },
       "storage": {
-        "imagestorage": {}
-      },
-      "function": {
-        "amplifychakraui8d579b74": {}
+        "imagestorage": {},
+        "ArtifactTable": {}
       }
     }
   }
