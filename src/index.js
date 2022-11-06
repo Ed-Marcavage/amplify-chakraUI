@@ -4,10 +4,19 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { Amplify } from "aws-amplify";
+import { DAppProvider, ChainId } from "@usedapp/core";
 import config from "./aws-exports";
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 import { Text, Flex, ThemeProvider, Theme } from "@aws-amplify/ui-react";
 Amplify.configure(config);
+
+const DappConfig = {
+  readOnlyChainId: ChainId.Goerli,
+  readOnlyUrls: {
+    [ChainId.Goerli]:
+      "https://goerli.infura.io/v3/61fd3f1e41834c5ebd42c6d193267d74",
+  },
+};
 
 const theme = extendTheme({
   styles: {
@@ -23,7 +32,9 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <ChakraProvider theme={theme}>
-      <App />
+      <DAppProvider config={DappConfig}>
+        <App />
+      </DAppProvider>
     </ChakraProvider>
   </React.StrictMode>
 );
