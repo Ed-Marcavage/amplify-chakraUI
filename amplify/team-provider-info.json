@@ -1,15 +1,15 @@
 {
-  "staging": {
+  "chakra": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-amplify7f3f39cb4c564-staging-204023-authRole",
-      "UnauthRoleArn": "arn:aws:iam::647966781979:role/amplify-amplify7f3f39cb4c564-staging-204023-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::647966781979:role/amplify-amplify7f3f39cb4c564-staging-204023-authRole",
+      "AuthRoleName": "amplify-amplifychakraui-chakra-110323-authRole",
+      "UnauthRoleArn": "arn:aws:iam::647966781979:role/amplify-amplifychakraui-chakra-110323-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::647966781979:role/amplify-amplifychakraui-chakra-110323-authRole",
       "Region": "us-east-1",
-      "DeploymentBucketName": "amplify-amplify7f3f39cb4c564-staging-204023-deployment",
-      "UnauthRoleName": "amplify-amplify7f3f39cb4c564-staging-204023-unauthRole",
-      "StackName": "amplify-amplify7f3f39cb4c564-staging-204023",
-      "StackId": "arn:aws:cloudformation:us-east-1:647966781979:stack/amplify-amplify7f3f39cb4c564-staging-204023/6904de90-5a25-11ed-8311-0e01ef5624bf",
-      "AmplifyAppId": "d3qpp54qdqtaof"
+      "DeploymentBucketName": "amplify-amplifychakraui-chakra-110323-deployment",
+      "UnauthRoleName": "amplify-amplifychakraui-chakra-110323-unauthRole",
+      "StackName": "amplify-amplifychakraui-chakra-110323",
+      "StackId": "arn:aws:cloudformation:us-east-1:647966781979:stack/amplify-amplifychakraui-chakra-110323/b62d7f80-5eb5-11ed-b3db-0a450c228333",
+      "AmplifyAppId": "d24sgfam84dr06"
     },
     "categories": {
       "api": {
